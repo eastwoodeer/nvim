@@ -5,6 +5,16 @@ local keymap = vim.keymap
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
+-- emacs keybinds for insert mode
+keymap.set("i", "<c-f>", "<Right>", { desc = "Move Right" })
+keymap.set("i", "<c-b>", "<Left>", { desc = "Move Left" })
+keymap.set("i", "<c-p>", "<Up>", { desc = "Move Up" })
+keymap.set("i", "<c-n>", "<Down>", { desc = "Move Down" })
+keymap.set("i", "<c-a>", "<Home>", { desc = "Move to begining of line" })
+keymap.set("i", "<c-e>", "<End>", { desc = "Move to end of line" })
+keymap.set("i", "<c-d>", "<Del>", { desc = "Delete current character" })
+keymap.set("i", "<c-k>", "<cmd>norm d$<cr><right>", { desc = "Delete to the end" })
+
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search hightlights" })
 
@@ -13,11 +23,6 @@ keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- incremen
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
 -- window management
-keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
-keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
-
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
 keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
