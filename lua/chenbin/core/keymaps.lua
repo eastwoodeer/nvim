@@ -14,6 +14,7 @@ keymap.set("i", "<c-a>", "<Home>", { desc = "Move to begining of line" })
 keymap.set("i", "<c-e>", "<End>", { desc = "Move to end of line" })
 keymap.set("i", "<c-d>", "<Del>", { desc = "Delete current character" })
 keymap.set("i", "<c-k>", "<cmd>norm d$<cr><right>", { desc = "Delete to the end" })
+keymap.set("i", "<c-y>", "<c-r>+", { desc = "yank kill text" })
 
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search hightlights" })
