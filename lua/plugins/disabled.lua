@@ -12,12 +12,6 @@ return {
         },
     },
     {
-        "snacks.nvim",
-        opts = {
-            scroll = { enabled = false },
-        },
-    },
-    {
         "folke/noice.nvim",
         keys = {
             { "<c-f>", mode = { "i" }, false },
