@@ -1,2 +1,1 @@
-require("chenbin.lazy")
-require("chenbin.core")
+require("config.lazy")
