@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 -- use jk to exit insert mode
-keymap.set("i", "jk", "<ESC><cmd>:write<CR>", { desc = "Exit insert mode with jk" })
+keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 -- emacs keybinds for insert mode
 keymap.set("i", "<c-f>", "<Right>", { desc = "Move Right" })

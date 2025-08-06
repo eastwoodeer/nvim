@@ -43,6 +43,9 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- turn off swapfile
 opt.swapfile = false
 
+-- set title on
+opt.title = true
+
 if vim.g.neovide then
     opt.guifont = "Maple Mono NF CN:h15"
 end
