@@ -47,5 +47,5 @@ opt.swapfile = false
 opt.title = true
 
 if vim.g.neovide then
-    opt.guifont = "Maple Mono NF CN:h15"
+    opt.guifont = "Maple Mono NF CN:h13"
 end
