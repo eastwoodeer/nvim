@@ -48,4 +48,8 @@ opt.title = true
 
 if vim.g.neovide then
     opt.guifont = "Maple Mono NF CN:h14"
+    vim.g.neovide_window_blurred = true
+    vim.g.neovide_normal_opacity = 0.95
+    vim.g.neovide_theme = "auto"
+    vim.g.neovide_cursor_vfx_mode = "railgun"
 end
