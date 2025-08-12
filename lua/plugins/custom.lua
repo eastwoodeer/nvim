@@ -20,5 +20,14 @@ return {
                 }
             }
         }
+    },
+    {
+        "echasnovski/mini.files",
+        opts = {
+            windows = {
+                preview = false,
+                width_preview = 100
+            }
+        }
     }
 }
