@@ -17,17 +17,17 @@ return {
             modes = {
                 char = {
                     jump_labels = true,
-                }
-            }
-        }
+                },
+            },
+        },
     },
     {
-        "echasnovski/mini.files",
+        "nvim-mini/mini.files",
         opts = {
             windows = {
                 preview = false,
-                width_preview = 100
-            }
-        }
-    }
+                width_preview = 100,
+            },
+        },
+    },
 }
