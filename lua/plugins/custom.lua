@@ -3,6 +3,11 @@ return {
         "snacks.nvim",
         opts = {
             scroll = { enabled = false },
+            indent = {
+                animate = {
+                    enabled = false,
+                },
+            },
             styles = {
                 lazygit = {
                     width = 0,
