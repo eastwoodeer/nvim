@@ -1,9 +1,22 @@
 return {
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-    {
-        "LazyVim/LazyVim",
-        opts = {
-            colorscheme = "catppuccin-latte",
-        },
-    },
+    -- {
+    --     "catppuccin/nvim",
+    --     name = "catppuccin",
+    --     lazy = true,
+    --     opts = {
+    --         flavour = "latte"
+    --     }
+    -- },
+    -- {
+    --     "folke/tokyonight.nvim",
+    --     lazy = true,
+    --     opts = {
+    --         style = "day",
+    --     },
+    -- },
+    -- {
+    "LazyVim/LazyVim",
+    opts = {
+        colorscheme = "catppuccin-latte",  -- latte/mocha
+    }
 }
