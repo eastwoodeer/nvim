@@ -35,14 +35,14 @@ return {
             },
         },
     },
-    {
-        "nvim-lualine/lualine.nvim",
-        config = function()
-            require("lualine").setup {
-                options = {
-                    theme = "zenburn",
-                }
-            }
-        end
-    },
+    -- {
+    --     "nvim-lualine/lualine.nvim",
+    --     config = function()
+    --         require("lualine").setup {
+    --             options = {
+    --                 theme = "zenburn",
+    --             }
+    --         }
+    --     end
+    -- },
 }
