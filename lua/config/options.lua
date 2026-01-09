@@ -27,7 +27,7 @@ opt.cursorline = true -- highlight the current cursor line
 -- turn on termguicolors for nightfly colorscheme to work
 -- (have to use iterm2 or any other true color terminal)
 opt.termguicolors = true
-opt.background = "light" -- colorschemes that can be light or dark will be made dark
+opt.background = "dark" -- colorschemes that can be light or dark will be made dark
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 
 -- backspace
@@ -47,9 +47,9 @@ opt.swapfile = false
 opt.title = true
 
 if vim.g.neovide then
-    opt.guifont = "Maple Mono NF CN:h14"
+    -- opt.guifont = "Maple Mono NF CN:h14"
     vim.g.neovide_window_blurred = true
-    vim.g.neovide_normal_opacity = 0.95
-    vim.g.neovide_theme = "auto"
+    vim.g.neovide_normal_opacity = 0.98
+    -- vim.g.neovide_theme = "auto"
     vim.g.neovide_cursor_vfx_mode = "railgun"
 end
