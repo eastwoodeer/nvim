@@ -14,12 +14,12 @@ return {
     --         style = "storm",
     --     },
     -- },
-    {
-        "LazyVim/LazyVim",
-        opts = {
-            colorscheme = "unokai",  -- latte/mocha
-        }
-    },
+    -- {
+    --     "LazyVim/LazyVim",
+    --     opts = {
+    --         colorscheme = "industry",  -- latte/mocha
+    --     }
+    -- },
     -- {
     --     "phha/zenburn.nvim",
     --     config = function()
@@ -36,4 +36,7 @@ return {
     --         }
     --     end
     -- },
+    {
+        "EdenEast/nightfox.nvim"
+    },
 }
