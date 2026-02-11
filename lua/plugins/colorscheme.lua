@@ -1,4 +1,41 @@
 return {
+    {
+        "EdenEast/nightfox.nvim",
+        priority = 1000,
+        config = function()
+            require("nightfox").setup({
+                options = {
+                    styles = {
+                        comments = "italic",
+                        keywords = "bold"
+                    }
+                }
+            })
+
+            local function setup_colorscheme_by_time()
+                local hour = tonumber(os.date("%H"))
+                local target_theme
+
+                if hour >= 8 and hour <= 17 then
+                    target_theme = "dayfox"
+                else
+                    target_theme = "terafox"
+                end
+
+                vim.cmd.colorscheme(target_theme)
+                vim.notify(string.format("colorscheme: %s", target_theme),
+                    vim.log.levels.INFO)
+            end
+
+            setup_colorscheme_by_time()
+
+            -- automatically check every half an hours
+            vim.fn.timer_start(0.5 * 60 * 60 * 1000,
+                setup_colorscheme_by_time,
+                {desc = "change colorscheme automatically"})
+        end
+
+    },
     -- {
     --     "catppuccin/nvim",
     --     name = "catppuccin",
@@ -17,7 +54,7 @@ return {
     -- {
     --     "LazyVim/LazyVim",
     --     opts = {
-    --         colorscheme = "industry",  -- latte/mocha
+    --         colorscheme = "dayfox",  -- latte/mocha
     --     }
     -- },
     -- {
@@ -36,7 +73,4 @@ return {
     --         }
     --     end
     -- },
-    {
-        "EdenEast/nightfox.nvim"
-    },
 }
