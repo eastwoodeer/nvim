@@ -19,7 +19,7 @@ return {
                 if hour >= 8 and hour <= 17 then
                     target_theme = "dayfox"
                 else
-                    target_theme = "terafox"
+                    target_theme = "duskfox"
                 end
 
                 vim.cmd.colorscheme(target_theme)
@@ -29,10 +29,8 @@ return {
 
             setup_colorscheme_by_time()
 
-            -- automatically check every half an hours
-            vim.fn.timer_start(0.5 * 60 * 60 * 1000,
-                setup_colorscheme_by_time,
-                {desc = "change colorscheme automatically"})
+            -- automatically check and modify color scheme every half hours
+            vim.fn.timer_start(0.5*60*60*1000, setup_colorscheme_by_time, {["repeat"] = -1})
         end
 
     },
