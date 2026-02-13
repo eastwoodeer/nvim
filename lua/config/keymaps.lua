@@ -2,6 +2,17 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
+local function smart_home()
+    local col = vim.fn.col(".")
+    vim.cmd("normal! ^")
+    if vim.fn.col(".") == col then
+        vim.cmd("normal! 0")
+    end
+end
+
+-- Smart Home: 第一次按 0 去 ^（第一个非空白），已经在那里时去真正的 0
+vim.keymap.set({ "n", "x" }, "0", smart_home, { desc = "Smart home: ^ then 0", expr = false })
+
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
@@ -10,7 +21,10 @@ keymap.set("i", "<c-f>", "<Right>", { desc = "Move Right" })
 keymap.set("i", "<c-b>", "<Left>", { desc = "Move Left" })
 keymap.set("i", "<c-p>", "<Up>", { desc = "Move Up" })
 keymap.set("i", "<c-n>", "<Down>", { desc = "Move Down" })
-keymap.set("i", "<c-a>", "<Home>", { desc = "Move to begining of line" })
+keymap.set("i", "<c-a>", function()
+    smart_home()
+    vim.cmd("startinsert")
+end, { desc = "Move to begining of line" })
 keymap.set("i", "<c-e>", "<End>", { desc = "Move to end of line" })
 keymap.set("i", "<c-d>", "<Del>", { desc = "Delete current character" })
 keymap.set("i", "<c-k>", "<cmd>norm d$<cr><right>", { desc = "Delete to the end" })
@@ -45,14 +59,3 @@ vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("t", "<D-v>", "<C-R>+", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })
 
--- Smart Home: 第一次按 0 去 ^（第一个非空白），已经在那里时去真正的 0
-vim.keymap.set({ "n", "x" }, "0", function()
-    -- 获取当前列
-    local col = vim.fn.col(".")
-    -- 先执行 ^ 的行为
-    vim.cmd("normal! ^")
-    -- 如果列没变，说明已经在第一个非空白位置了，再去绝对行首
-    if vim.fn.col(".") == col then
-        vim.cmd("normal! 0")
-    end
-end, { desc = "Smart home: ^ then 0", expr = false })
